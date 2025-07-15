@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syed Junaith | Full Stack Developer Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <style>
+    :root {
+      --primary: #058572;
+      --secondary: #0d69b9;
+      --dark: #111;
+      --light: #ffffff;
+      --bg: #0f1117;
+      --card-bg: #1a1d25;
+      --text-light: #ccc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: background 0.5s ease;
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--light);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: var(--light);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 90vh;
+      background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: var(--light);
+      animation: backgroundShift 10s ease infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: var(--light);
+      color: var(--dark);
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #eee;
+    }
+
+    section {
+      padding: 60px 50px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .projects, .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      color: var(--text-light);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #2c2f36;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(120deg, rgba(0,255,255,0.1), rgba(255,255,255,0.05));
+      transition: all 0.6s ease;
+    }
+
+    .card:hover::before {
+      left: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+
+    footer {
+      background: var(--dark);
+      padding: 20px;
+      text-align: center;
+      color: #888;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #555;
+      background: #1f1f1f;
+      color: var(--text-light);
+    }
+
+    .form-btn {
+      padding: 10px 20px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+    <body>
+  <header data-aos="fade-down">
+    <h1>Syed Junaith</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero" data-aos="zoom-in">
+    <h2>Full Stack Developer</h2>
+    <p>I build smart, responsive, and high-performance web applications. Passionate about solving real-world problems with clean code.</p>
+    <a href="assets/YourResume.pdf" class="btn" download>Download Resume</a>
+  </div>
+
+  <section id="projects" data-aos="fade-up">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="card" data-aos="fade-right">
+        <h3>Smart Digital School Bell</h3>
+        <p>IoT-based automation system with real-time bell scheduling and teacher substitution.</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <h3>Microgrid Optimization</h3>
+        <p>AI-powered optimization and control for renewable energy-based microgrids using ML algorithms.</p>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <h3>Speech Recognition System</h3>
+        <p>ESP32-based voice recognition to control home appliances wirelessly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" data-aos="fade-up">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="card" data-aos="zoom-in">HTML, CSS, JavaScript</div>
+      <div class="card" data-aos="zoom-in">React.js, Node.js, Express</div>
+      <div class="card" data-aos="zoom-in">MongoDB, MySQL</div>
+      <div class="card" data-aos="zoom-in">STM32, ESP32, Arduino</div>
+      <div class="card" data-aos="zoom-in">Git, GitHub, Docker</div>
+      <div class="card" data-aos="zoom-in">Machine Learning, TensorFlow</div>
+    </div>
+  </section>
+
+  <section id="certifications" data-aos="fade-up">
+    <h2 class="section-title">Certifications</h2>
+    <div class="skills">
+      <div class="card">AWS Certified Cloud Practitioner</div>
+      <div class="card">Google IT Support Professional</div>
+      <div class="card">Coursera ML by Andrew Ng</div>
+    </div>
+  </section>
+
+  <section id="testimonials" data-aos="fade-up">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="projects">
+      <div class="card">"Syed is an exceptional developer with great attention to detail." – Mentor</div>
+      <div class="card">"Delivered our school automation system ahead of schedule. Highly recommend!" – Client</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" data-aos="fade-up">
+    <h2 class="section-title">Contact</h2>
+    <form action="https://formspree.io/f/your-id" method="POST" style="max-width:500px; margin:0 auto;">
+      <input type="text" name="name" placeholder="Your Name" required class="form-input">
+      <input type="email" name="email" placeholder="Your Email" required class="form-input">
+      <textarea name="message" placeholder="Your Message" rows="4" required class="form-input"></textarea>
+      <button type="submit" class="form-btn">Send Message</button>
+    </form>
+    <br>
+    <br>
+    <p>Email: syedjunaith455@gmail.com | LinkedIn: linkedin.com/in/syedjunaith</p>
+  </section>
+  <footer data-aos="fade-up">
+    &copy; 2025 Syed Junaith. All Rights Reserved.
+  </footer>
+
+  <button id="topBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</body>
+</html>
